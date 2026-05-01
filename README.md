@@ -1,6 +1,8 @@
-# get_next_line
+This project has been created as part of the 42 curriculum by dosorio-
 
-A **42 School** project that implements `get_next_line(int fd)`: a function that reads and returns the next line from a file descriptor, handling buffering between calls.
+# Descripition
+
+The get_next_line is a function that reads and returns the next line from a file descriptor, handling buffering between calls.
 
 > Returns a dynamically allocated string containing the line (including the trailing `\n` when present), or `NULL` on end-of-file or error.
 
@@ -151,23 +153,6 @@ cc -Wall -Wextra -Werror -D BUFFER_SIZE=42 \
 
 ---
 
-## API
-
-### Mandatory
-
-```c
-char *get_next_line(int fd);
-```
-
-Header: `get_next_line.h`
-
-### Bonus
-
-Same API, but the implementation is able to manage multiple file descriptors at once.
-
-Header: `get_next_line_bonus.h`
-
----
 
 ## How it works (high-level)
 
