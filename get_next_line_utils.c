@@ -14,26 +14,27 @@
 
 char	*ft_strjoin(char *str, char *buffer)
 {
-	char	*d;
-	size_t	i;
-	size_t	j;
+    size_t len1 = strlen_newline(str);
+    size_t len2 = strlen_newline(buffer);
+    char *d = malloc(len1 + len2 + 1);
+    size_t i = 0;
+    size_t j = 0;
 
-	d = malloc(sizeof(char) * (strlen_newline(str) + strlen_newline(buffer)
-				+ 1));
-	if (!d)
-		return (free(str), NULL);
-	i = 0;
-	while (str && str[i] != '\0' && i < strlen_newline(str))
-	{
-		d[i] = str[i];
-		i++;
-	}
-	j = 0;
-	while (buffer[j] != '\0' && j < strlen_newline(buffer))
-		d[i++] = buffer[j++];
-	free(str);
-	d[i] = '\0';
-	return (d);
+    if (!d)
+        return (free(str), NULL);
+
+    while (str && i < len1)
+    {
+        d[i] = str[i];
+        i++;
+    }
+
+    while (j < len2)
+        d[i++] = buffer[j++];
+
+    d[i] = '\0';
+    free(str);
+    return d;
 }
 
 void	clean_buffer(char *buffer)
@@ -49,8 +50,8 @@ void	clean_buffer(char *buffer)
 		i++;
 	while (buffer[i])
 		buffer[j++] = buffer[i++];
-	while (buffer[j])
-		buffer[j++] = '\0';
+	
+	buffer[j++] = '\0';
 }
 
 size_t	strlen_newline(char const *str)
