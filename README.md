@@ -1,5 +1,7 @@
 *This project has been created as part of the 42 curriculum by dosorio-*
 
+[![Language](https://img.shields.io/badge/Language-C-blue.svg?style=flat&logo=c)](https://en.wikipedia.org/wiki/C_(programming_language))
+
 # Descripition
 
 The get_next_line is a function that reads and returns the next line from a file descriptor, handling buffering between calls.
